@@ -274,7 +274,7 @@ async function runTimer(mainPage: Page, inventory: Page) {
 
 // async function run() {
 //     info('Starting application');
-//     const browser = await puppeteer.launch({executablePath:"/usr/bin/chromium-browser", args:['--no-sandbox','--start-maximized', '--headless=new']});
+//     const browser = await puppeteer.launch({executablePath:"/usr/lib/chromium-browser/chromium-browser", args:['--no-sandbox']});
 //     const mainPage = (await browser.pages())[0];
 //     await mainPage.setViewport({width: 1280, height: 720})
 //     await initTwitch(mainPage);
@@ -292,7 +292,7 @@ async function run() {
     process.setMaxListeners(0); // 設置MaxListeners，0代表無限
     info('Starting application');
     const streamersBrowser = new Array
-    const browser = await puppeteer.launch({executablePath:"/usr/bin/chromium-browser", args:['--no-sandbox','--start-maximized', '--headless=new']});
+    const browser = await puppeteer.launch({executablePath:"/usr/lib/chromium-browser/chromium-browser", args:['--no-sandbox']});
     const mainPage = (await browser.pages())[0];
     await mainPage.setViewport({width: 1280, height: 720})
     await initTwitch(mainPage);
@@ -318,7 +318,7 @@ async function run() {
 
     info("=========================");
     for (var i = 0; i < streamers.length; i++) {
-        streamersBrowser[i] = await puppeteer.launch({executablePath:"/usr/bin/chromium-browser", args:['--no-sandbox','--start-maximized', '--headless=new']});
+        streamersBrowser[i] = await puppeteer.launch({executablePath:"/usr/lib/chromium-browser/chromium-browser", args:['--no-sandbox']});
         streamersPage[i] = (await streamersBrowser[i].pages())[0];
         await streamersPage[i].setViewport({width: 1280, height: 720})
         await initTwitch(streamersPage[i]);
@@ -364,7 +364,7 @@ async function run() {
 
         info("=========================");
         for (var i = 0; i < streamers.length; i++) {
-            streamersBrowser[i] = await puppeteer.launch({executablePath:"/usr/bin/chromium-browser", args:['--no-sandbox','--start-maximized', '--headless=new']});
+            streamersBrowser[i] = await puppeteer.launch({executablePath:"/usr/lib/chromium-browser/chromium-browser", args:['--no-sandbox']});
             streamersPage[i] = (await streamersBrowser[i].pages())[0];
             await streamersPage[i].setViewport({width: 1280, height: 720})
             await initTwitch(streamersPage[i]);
