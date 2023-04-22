@@ -25,10 +25,10 @@ const pointNumberQuery = 'div[data-test-selector="balance-string"] span' // 忠�
 
 // 自己新增 End
 
-if (help || !(game || file)) {
-    console.log(usage);
-    process.exit(0);
-}
+// if (help || !(game || file)) {
+//     console.log(usage);
+//     process.exit(0);
+// }
 
 if (!process.env.TWITCH_CHROME_EXECUTABLE) {
     throw new Error('TWITCH_CHROME_EXECUTABLE not set')
