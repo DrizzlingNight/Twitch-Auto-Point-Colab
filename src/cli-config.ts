@@ -79,5 +79,5 @@ export const cmdOptions = [
     { name: 'no-headless', type: Boolean, defaultValue: false },
     { name: 'proxy', type: String, alias: 'p' },
     { name: 'file', alias: 'f', type: String },
-    { name: 'kind', alias: 'k', type: String, defaultValue: '1'},
+    { name: 'kind', alias: 'k', type: String, defaultOption: true, defaultValue: '1'},
 ];

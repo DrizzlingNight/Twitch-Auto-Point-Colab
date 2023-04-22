@@ -121,6 +121,7 @@ async function queryOnWebsite(page: Page, query: String) {
 async function findFollowOnlineChannel(page: Page) {
     buffering = 0;
     prevDuration = -1;
+    info('===從所有追隨的主播裡尋找===');
     info('Finding online channel...');
     await getAllStreamer(page)
     return;
@@ -130,6 +131,7 @@ async function findFollowOnlineChannel(page: Page) {
 async function findOnlineChannelFromList(page: Page) {
     buffering = 0;
     prevDuration = -1;
+    info('===從自定義的主播清單裡尋找===');
     info('Finding online channel...');
     streamers = []
     for (var i = 0; i < followingStreamserList.length; i++ ) {
