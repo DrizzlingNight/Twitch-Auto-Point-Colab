@@ -179,7 +179,8 @@ async function getPointNumber(page: Page, pointNumberQuery: string): Promise<str
 async function loopWatch(streamer: any) {
     info(`👁‍🗨 now Watch ${streamer.link}, 🕒 Start: ${streamer.startTime}`);
     await streamer.page.goto(`https://twitch.tv${streamer.link}`, {
-        waitUntil: ['networkidle2', 'domcontentloaded']
+        waitUntil: ['networkidle2', 'domcontentloaded'],
+        timeout: 300000
     });
     streamer.startPoint = await getPointNumber(streamer.page, pointNumberQuery);
     while (streamer.isRun) {
