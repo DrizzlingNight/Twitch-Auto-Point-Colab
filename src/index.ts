@@ -258,7 +258,7 @@ async function watchStreamers(mainPage:any, streamersBrowser:any) {
         streamersBrowser[i].page = (await streamersBrowser[i].browser.pages())[0];
 
         await streamersBrowser[i].page.setViewport({width: 1280, height: 720})
-        streamersBrowser[i].page.setDefaultNavigationTimeout(300000); // 設置300秒超時
+        streamersBrowser[i].page.setDefaultNavigationTimeout(1200000); // 設置1200秒超時
         await initTwitch(streamersBrowser[i].page);
         await streamersBrowser[i].page.bringToFront();
         
