@@ -179,8 +179,7 @@ async function getPointNumber(page: Page, pointNumberQuery: string): Promise<str
 async function loopWatch(streamer: any) {
     info(`👁‍🗨 now Watch ${streamer.link}, 🕒 Start: ${streamer.startTime}`);
     await streamer.page.goto(`https://twitch.tv${streamer.link}`, {
-        waitUntil: ['networkidle2', 'domcontentloaded'],
-        timeout: 300000
+        waitUntil: ['networkidle2', 'domcontentloaded']
     });
     streamer.startPoint = await getPointNumber(streamer.page, pointNumberQuery);
     while (streamer.isRun) {
@@ -259,6 +258,7 @@ async function watchStreamers(mainPage:any, streamersBrowser:any) {
         streamersBrowser[i].page = (await streamersBrowser[i].browser.pages())[0];
 
         await streamersBrowser[i].page.setViewport({width: 1280, height: 720})
+        streamersBrowser[i].page.setDefaultNavigationTimeout(300000); // 設置300秒超時
         await initTwitch(streamersBrowser[i].page);
         await streamersBrowser[i].page.bringToFront();
         
